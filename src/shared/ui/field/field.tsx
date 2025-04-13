@@ -1,13 +1,10 @@
+import { Tile } from "@/shared/ui/tile";
+
 export function Field({ width, height }: { width: number; height: number }) {
   const items = [];
 
   for (let i = 0; i < width * height; i++) {
-    items.push(
-      <div
-        className="w-10 h-10 bg-slate-300 rounded-lg cursor-pointer hover:bg-slate-400"
-        key={i}
-      ></div>,
-    );
+    items.push(<Tile key={i} isMined={false} mines={i} />);
   }
 
   return (
